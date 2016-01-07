@@ -25,7 +25,12 @@ $(document).ready(function() {
       });
 
       $.get('../service/add_client.php', {ax: 'add-client', data: data}, function(result) {
-        window.location = '/';
+        if (result.success) {
+          window.location = '/';
+        }
+        else {
+          events.showMessage(result.message);
+        }
       }, 'json');
     },
     addProject: function() {
@@ -39,6 +44,10 @@ $(document).ready(function() {
     },
     removeProject: function(e) {
       $(e.target).closest('.project').remove();
+    },
+    showMessage: function(message) {
+      $('body').prepend('<div class="notice">' + message + '</div>');
+      window.scrollTo(0, 0);
     }
   };
   events.init();
