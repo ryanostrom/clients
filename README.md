@@ -3,7 +3,7 @@
 This is a simple app that displays client information as follows:
 
 - Client
-  - Repo
+  - Repo URL
   - Deployment Tool
   - Project 1
     - Staging Environment Details
@@ -13,5 +13,5 @@ This is a simple app that displays client information as follows:
 ## Local Configuration
 
 - Add database to local server
-- Copy includes/DefaultConfig.php to includes Config.php
+- Copy /includes/DefaultConfig.php to /includes/Config.php
 - Set DB connection details in Config.php
